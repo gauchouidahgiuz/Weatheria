@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather in {{ weather.location }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .weather-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f7f7f7;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .weather-icon {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .weather-icon img {
+            width: 100px;
+            height: 100px;
+        }
+        .weather-info {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        {% if weather %}
+            <div class="weather-icon">
+                <img src="{{ weather.icon }}" alt="Weather Icon">
+            </div>
+            <div class="weather-info">
+                <h2>meteo a {{ weather.location }}</h2>
+                <p>Temperature: {{ weather.temperature }}°C</p>
+                <p>Index UV : {{ weather.uv_index }}</p>
+                <p>Humidite : {{ weather.humidity }}%</p>
+                <p>Vitesse du vent : {{ weather.windspeed }} km/h</p>
+            </div>
+        {% elif error %}
+            <p>{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
