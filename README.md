@@ -24,5 +24,7 @@ You can view the live application by running it locally and navigating to `http:
 1. **Clone the Repository:**
 
    ```bash
-git clone https://github.com/gauchouidahgiuz/weatheria.git
-cd weatheria
+   git clone https://github.com/gauchouidahgiuz/weatheria.git
+   cd weatheria
+#reminder
+Dont forget to enter your api key, your location and change language
